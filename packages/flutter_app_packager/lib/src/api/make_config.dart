@@ -182,7 +182,7 @@ class MakeLinuxPackageConfig extends MakeConfig {
   String get appBinaryName {
     if (_appBinaryName == null) {
       final cMakeListsFile = File('linux/CMakeLists.txt');
-      final RegExp regex = RegExp(r'(?<=set\(BINARY_NAME\s")[^"]+(?="\))');
+      final RegExp regex = RegExp(r'(?<=set\(APPLICATION_ID\s")[^"]+(?="\))');
       final Match? match = regex.firstMatch(cMakeListsFile.readAsStringSync());
 
       if (match != null) {
